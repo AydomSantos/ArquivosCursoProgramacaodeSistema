@@ -51,7 +51,19 @@ print("--------------")
 print("Nome do Aluno   |   Média")
 print("-----------------------------")
 for nome, media in alunos[:3]:  
-    print(f"{nome:<15} |   {media:.2f}")        
+    print(f"{nome:<15} |   {media:.2f}")     
+
+mediaMinima = float(6.0)
+
+print("Alunos:")
+print("Nome do Aluno   |   Média   |   Situação")
+print("-----------------------------------------------")
+
+for nome, mediaAluno in alunos:
+    situacaoAluno = "Aprovado" if mediaAluno >= mediaMinima else "Reprovado"
+    print(f"{nome:<15} |   {media:.2f}   |   {situacaoAluno}")
+
+
 
 
 
