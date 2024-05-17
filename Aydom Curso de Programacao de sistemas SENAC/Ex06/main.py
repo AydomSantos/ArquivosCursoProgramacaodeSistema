@@ -1,4 +1,4 @@
-
+"""
 agenda = []
 
 # função responsavel pela pesquisa do contato pelo apelido
@@ -47,3 +47,45 @@ while True:
     elif opcao == 3:
         break
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+"""
+
+def listadeCompras():
+    itens = []
+
+    while True:
+        print("\nMenu:")
+        print("1. Adicionar item")
+        print("2. Remover item")
+        print("3. Visualizar itens")
+        print("4. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            item = input("Digite o nome do item a adicionar: ")
+            itens.append(item)
+            print(f"{item} adicionado à lista de compras.")
+        elif opcao == "2":
+            if itens:
+                itemRemover = input("Digite o nome do item a remover: ")
+                if itemRemover in itens:
+                    itens.remove(itemRemover)
+                    print(f"{itemRemover} removido da lista de compras.")
+                else:
+                    print(f"{itemRemover} não encontrado na lista de compras.")
+            else:
+                print("A lista de compras está vazia.")
+        elif opcao == "3":
+            if itens:
+                print("\nItens na lista de compras:")
+                for item in itens:
+                    print(item)
+            else:
+                print("A lista de compras está vazia.")
+        elif opcao == "4":
+            print("Encerrando o programa...")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha uma opção válida.")
+
+listadeCompras()
