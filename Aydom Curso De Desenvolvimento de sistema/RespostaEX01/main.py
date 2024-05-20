@@ -19,6 +19,7 @@ print(f"o Fatorial de {numValor} : {fatoralValor(numValor)}")
 
 # questão 7
 
+"""
 import re
 
 def validaSenha(valor):
@@ -31,6 +32,37 @@ def validaSenha(valor):
     else:
         return False
 
-       
-    
+     
 
+"""
+
+# questão 5
+
+def listaCompras():
+    compras = []
+    while True:
+        print("\n Menu da Lista de Compras")
+        print("1. Adcionar item")
+        print("2. Remove item")
+        print("3. Visualizar item")
+        print("4. Sair")
+        escolha = input("Insira a opção escolhida: ")
+        if escolha == "1":
+            item = input("Digite o item que deva ser adicionado: ")
+            compras.append(item)
+        elif escolha == "2":
+            item = input("Digite o item que voçê deseja remover: ")
+            if(item in compras):
+                compras.remove(item)
+            else:
+                print("Item não encontrado ! ")
+        elif escolha == "3":
+            print("lista de Compras Atual")
+            for item in compras:
+                print(item)
+        elif escolha == "4":
+            break
+        else:
+            print("Opção invalida")
+
+listaCompras()
