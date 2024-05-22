@@ -56,7 +56,12 @@ class Pessoa:
 pessoaUm = Pessoa("Aydom", 23, 60, 1.70)
 print(pessoaUm)
 
+print("===============================================")
 
+pessoaUm.Envelhecer()
+pessoaUm.Enmagrecer(10)
+
+print(pessoaUm)
     
 
 
