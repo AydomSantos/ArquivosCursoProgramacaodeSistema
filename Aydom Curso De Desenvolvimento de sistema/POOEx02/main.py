@@ -16,7 +16,7 @@ class ContaBancaria:
         else:
             self.valorSaldo -= valorRetirado
 
-    def ConsultarSaldo(self, visualizar):
+    def consultarSaldo(self, visualizar):
         visualizar = self.valorSaldo
         print(f"Seu saldo atual e: {visualizar}")
 
@@ -28,7 +28,7 @@ class ContaBancaria:
 
         if self.valorSaldo < 0:
             print("Não tem saldo")
-        elif numAge < 5:
+        elif numAge < 5 and numAge == str:
             print("o numero digitado e invalido !")
         elif len(numConta) < 6 and not numConta["zxcvbnmçlkjhgfdsaqwertyuiop"]:
             print("Numero invalido !!")
@@ -40,12 +40,19 @@ class ContaBancaria:
         return f"Nome: {self.nomePessoa}\nNumero da conta: {self.numConta}\nSaldo: ${self.valorSaldo}"
 
         
-testeUm = ContaBancaria("Aydom do teste silva", 123456, 12345, 1030)
+contaUm = ContaBancaria("teste", 12345, "123456a", 0)
+contaDois = ContaBancaria("teste02", 54123, "123445l", 0)
+        
+contaUm.Depositar(1000)
+print(contaUm)
 
-testeUm.Depositar(1003)
-testeUm.Sacar(500)
-testeUm.ConsultarSaldo(testeUm)
-testeUm.Transferir(12345, "1234565", 1000)
+print("==================================================")
+
+contaUm.Transferir(54123, "545545o", 1000)
+
+print("==================================================")
+
+print(contaDois)
 
 
 
