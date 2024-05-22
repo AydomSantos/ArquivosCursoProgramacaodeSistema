@@ -1,4 +1,5 @@
 
+"""
 
 class ContaBancaria:
     def __init__(self, nomePessoa, numAgencia, numConta, valorSaldo):
@@ -56,7 +57,39 @@ print(contaDois)
 
 
 
-    
+"""
 
+# resposta
 
+class ContaBancaria:
+    def __init__(self, nome_titular, numero_conta, saldo_inicial = 0):
+        self.nome_titular = nome_titular
+        self.numero_conta = numero_conta
+        self.saldo_inicial = saldo_inicial
+
+    def depositar(self, valor_deposito):
+        if valor_deposito < 0:
+            print("Valor de depoito invalido")
+        else:
+            self.saldo_inicial += valor_deposito
+    def sacar(self, valor_sacar):
+        if valor_sacar > 0:
+            if self.saldo_inicial >= valor_sacar:
+                self.saldo_inicial -= valor_sacar
+            else:
+                print("Saldo insuficiente !")
+        else:
+            print("Valor de saque invalido")
+    def consultar(self):
+        return self.saldo_inicial
+    def transferir(self, valor_transferi, conta_recebe):
+        if valor_transferi > 0:
+            if self.saldo_inicial >= valor_transferi:
+                self.saldo_inicial -= valor_transferi
+                conta_recebe.depositar(valor_transferi)
+                print("Transferencia feita com Sucesso")
+            else:
+                print("Não possui saldo !")
+        else:
+            print("valor da transferencia")
         
